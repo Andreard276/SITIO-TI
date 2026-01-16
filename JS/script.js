@@ -32,3 +32,17 @@ function divicion(){
 
 
 }
+
+// Efecto Parallax para la imagen ONE
+document.addEventListener('mousemove', function(e) {
+    const parallaxImage = document.querySelector('.parallax-image');
+    if (parallaxImage) {
+        const mouseX = e.clientX / window.innerWidth;
+        const mouseY = e.clientY / window.innerHeight;
+        
+        const moveX = (mouseX - 0.5) * 20;
+        const moveY = (mouseY - 0.5) * 20;
+        
+        parallaxImage.style.transform = `translate(${moveX}px, ${moveY}px)`;
+    }
+});
